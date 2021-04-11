@@ -1,5 +1,8 @@
 const myLibrary = [];
-const body = document.querySelector('body');
+
+const divLibrary = document.createElement('div');
+divLibrary.id = 'div_library';
+document.body.appendChild(divLibrary);
 
 function Book(title, author, pages, read) {
         this.title = title;
@@ -22,17 +25,22 @@ function addBookToLibrary(bookParams) {
 }
 
 function displayLibrary() {
+        document.getElementById('div_library').innerHTML = '';
+
         myLibrary.forEach(book => {
-                const box = document.createElement('div');
-                box.appendChild(document.createTextNode(Object.values(book)));
-                body.appendChild(box);
+                const divBook = document.createElement('div');
+                divBook.className = 'div_book';
+                divBook.appendChild(document.createTextNode(Object.values(book)));
+
+                divLibrary.appendChild(divBook);
         });
 }
 
-function main() {
-        addBookToLibrary(askUser());
+function main() {}
+
+document.getElementById('button_new').addEventListener('click', () => {
         addBookToLibrary(askUser());
         displayLibrary();
-}
+});
 
 main();
