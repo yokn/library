@@ -1,0 +1,19 @@
+button {
+  margin-top: 10px;
+  line-height: 30px;
+  font-weight: bold;
+  padding: 20 20px;
+  border: none;
+}
+
+#true {
+  border: 1px outset;
+  color: #369;
+  background: lightgreen;
+}
+
+#false {
+  border: 1px outset;
+  color: #369;
+  background: red;
+}
